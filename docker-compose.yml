@@ -43,7 +43,7 @@ services:
                 volumes:
                         - /tmp/demo-opal:/srv
         agate:
-                image: obiba/agate
+                image: obiba/agate:latest
                 ports:
                         - "9944:8444"
                         - "9981:8081"
