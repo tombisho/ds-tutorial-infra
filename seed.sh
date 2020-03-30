@@ -23,3 +23,4 @@ cd $DIR/../obiba-home
 doSeed http://localhost:9980 https://localhost:9945 https://localhost:9944
 cd $DIR
 agate rest -ag https://agate-demo.obiba.org -u administrator -p password -ct "application/json" -m PUT /config < agate-config.json
+mica rest -mk https://mica-demo.obiba.org -u administrator -p password -m PUT /config/_index
