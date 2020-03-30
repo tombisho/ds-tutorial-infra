@@ -21,3 +21,5 @@ doSeed() {
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR/../obiba-home
 doSeed http://localhost:9980 https://localhost:9945 https://localhost:9944
+cd $DIR
+agate rest -ag https://agate-demo.obiba.org -u administrator -p password -ct "application/json" -m PUT /config < agate-config.json
