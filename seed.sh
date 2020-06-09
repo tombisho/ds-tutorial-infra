@@ -10,7 +10,7 @@ doSeed() {
   done
 
   echo "Seeding Opal" $(date +"%F - %T")
-  make seed-opal seed-datashield  database=mongodb opal_url=$1
+  make seed-opal database=mongodb opal_url=$1 rserver_home=/tmp/demo-rserver
   sleep 300
   echo "Seeding Mica" $(date +"%F - %T")
   make seed-mica mica_url=$2

@@ -61,4 +61,11 @@ services:
                 image: obiba/opal-rserver:latest
                 volumes:
                         - /tmp/demo-rserver:/srv
+        mysqldata:
+                image: mysql:5
+                environment:
+                        - MYSQL_DATABASE=opal
+                        - MYSQL_ROOT_PASSWORD=password
+                        - MYSQL_USER=opal
+                        - MYSQL_PASSWORD=password
 
