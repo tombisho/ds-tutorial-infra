@@ -1,7 +1,7 @@
 sqlfile=../obiba-home/opal/seed/data/CNSIM1.sql
 network=obiba-demo
 
-all: refresh mysqlrestore
+all: refresh mysqlrestore datashield-alt
 
 refresh:
 	./refresh.sh
@@ -17,3 +17,7 @@ mysqlrestore:
 
 r:
 	sudo docker exec -i -t $(network)_rserver_1 /bin/bash
+
+datashield-alt:
+	opal rest -o https://opal-demo.obiba.org -u administrator -p password -m POST "/datashield/packages?name=isglobal-brge%2FdsOmics&ref=master"
+	opal rest -o https://opal-demo.obiba.org -u administrator -p password -m POST "/datashield/packages?name=tombisho%2FdsGeo&ref=master"
