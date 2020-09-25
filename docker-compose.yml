@@ -1,27 +1,5 @@
 version: '3'
 services:
-        mica:
-                image: obiba/mica:latest
-                ports:
-                        - "9945:8445"
-                        - "9982:8082"
-                links:
-                        - mongo
-                        - agate
-                        - opal
-                environment:
-                        - JAVA_OPTS=-Xmx2G
-                        - MICA_ADMINISTRATOR_PASSWORD=password
-                        - MICA_ANONYMOUS_PASSWORD=password
-                        - MONGO_HOST=mongo
-                        - MONGO_PORT=27017
-                        - OPAL_HOST=opal
-                        - OPAL_PORT=8443
-                        - AGATE_HOST=agate
-                        - AGATE_PORT=8444
-                        - RSERVER_HOST=rserver
-                volumes:
-                        - /tmp/demo-mica:/srv
         mongo:
                 image: mongo
         opal:
@@ -31,32 +9,14 @@ services:
                         - "9980:8080"
                 links:
                         - mongo
-                        - agate
                         - rserver
                 environment:
                         - OPAL_ADMINISTRATOR_PASSWORD=password
                         - MONGO_HOST=mongo
                         - MONGO_PORT=27017
-                        - AGATE_HOST=agate
-                        - AGATE_PORT=8444
                         - RSERVER_HOST=rserver
                 volumes:
                         - /tmp/demo-opal:/srv
-        agate:
-                image: obiba/agate:latest
-                ports:
-                        - "9944:8444"
-                        - "9981:8081"
-                links:
-                        - mongo
-                environment:
-                        - AGATE_ADMINISTRATOR_PASSWORD=password
-                        - MONGO_HOST=mongo
-                        - MONGO_PORT=27017
-                        - RECAPTCHA_SITE_KEY=6LdANggTAAAAAEBWCuEL-YkFd3ehtzlg4CzQpn3e
-                        - RECAPTCHA_SECRET_KEY=6LdANggTAAAAAMds-qrsU6P-STY7GZ3nRgQEuWZE
-                volumes:
-                        - /tmp/demo-agate:/srv
         rserver:
                 image: obiba/opal-rserver:latest
                 volumes:

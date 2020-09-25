@@ -5,8 +5,6 @@ cd $DIR
 /usr/local/bin/docker-compose rm --all -f -v
 rm -rf /tmp/demo-*
 docker rmi -f obiba/opal
-docker rmi -f obiba/mica
-docker rmi -f obiba/agate
 docker rmi -f obiba/opal-rserver
 
 /usr/local/bin/docker-compose pull
