@@ -3,7 +3,7 @@
 echo "Waiting for Opal to be ready..."
 doSeed() {
   echo "Waiting for Opal to be ready..."
-  while [ `opal rest -o $1 -u administrator -p password -m GET /system/databases | grep -ch "mongodb"` -eq 0 ]
+  while [ `opal rest -o $1 -u administrator -p datashieldtest -m GET /system/databases | grep -ch "mongodb"` -eq 0 ]
   do
 	echo -n "#"
 	sleep 5

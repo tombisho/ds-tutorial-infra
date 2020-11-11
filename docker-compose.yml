@@ -11,12 +11,14 @@ services:
                         - mongo
                         - rserver
                 environment:
-                        - OPAL_ADMINISTRATOR_PASSWORD=password
+                        - OPAL_ADMINISTRATOR_PASSWORD=datashieldtest
                         - MONGO_HOST=mongo
                         - MONGO_PORT=27017
                         - RSERVER_HOST=rserver
                 volumes:
                         - /tmp/demo-opal:/srv
+#                        - /tmp/opal-config.properties:/srv/conf/opal-config.properties
+#                        - /home/l_trpb2/opal-config.properties:/srv/conf/opal-config.properties
         rserver:
                 image: obiba/opal-rserver:latest
                 volumes:
