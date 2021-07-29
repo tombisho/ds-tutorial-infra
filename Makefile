@@ -21,7 +21,7 @@ r:
 datashield-alt:
 	Rscript install.R
 	#opal rest -o https://opal-demo.obiba.org -u administrator -p password -m POST "/datashield/packages?name=tombisho%2FdsGeo&ref=master"
-	opal rest -o http://localhost:9980 -u administrator -p datashieldtest -m POST "/datashield/packages?name=isglobal-brge%2FdsOmics&ref=master"
+	#opal rest -o http://localhost:9980 -u administrator -p datashieldtest -m POST "/datashield/packages?name=isglobal-brge%2FdsOmics&ref=master"
 
 clean-docker:
 	sudo docker image prune -f
